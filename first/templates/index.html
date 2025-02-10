@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Ласкаво просимо до нашої піцерії!</h1>
+
+<h2 class="text-center">Дізнайтесь погоду</h2>
+<form method="POST" class="text-center mb-4">
+    <input type="text" name="city" placeholder="Введіть назву міста" class="form-control w-50 d-inline" required>
+    <button type="submit" class="btn btn-primary">Дізнатись погоду</button>
+</form>
+
+{% if error %}
+<div class="alert alert-danger text-center">{{ error }}</div>
+{% endif %}
+
+{% if weather_data %}
+<div class="card mx-auto" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{ weather_data.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ weather_data.sys.country }}</h6>
+        <p class="card-text">
+            Температура: {{ weather_data.main.temp }}°C<br>
+            Погода: {{ weather_data.weather[0].description }}<br>
+            Вологість: {{ weather_data.main.humidity }}%<br>
+            Швидкість вітру: {{ weather_data.wind.speed }} м/с
+        </p>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

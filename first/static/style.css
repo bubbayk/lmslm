@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(lavender, skyblue);
+    text-align: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+
+h1 {
+    color:darkslategrey;
+    text-shadow: 5px 0px 5px skyblue, 5px -5px 5px lavender;
+
+
+
+
+}
+
+a:visited{
+    color: crimson;
+}
+a:hover{
+    color: yellow;
+}
+
